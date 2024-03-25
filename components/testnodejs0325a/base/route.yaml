@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: testnodejs0325a
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: testnodejs0325a 
+  name: testnodejs0325a
+spec:
+  port:
+    targetPort: 3001 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: testnodejs0325a
+    weight: 100 

@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: testnodejs0325a-gitops
+  description: This is GitOps manifest for testnodejs0325a   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: testnodejs0325a
+    janus-idp.io/tekton: testnodejs0325a 
+    backstage.io/kubernetes-id: testnodejs0325a 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:testnodejs0325a
